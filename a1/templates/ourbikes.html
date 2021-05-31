@@ -1,0 +1,56 @@
+<!--Atharva Deshpande, ad3756@drexel.edu-->
+<!--CS530: DUI, Assignment 1-->
+
+
+{% extends 'base.html' %}
+{% set active = "Bikes" %}
+
+{% block title %}
+Bikes
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <div class="text-left">
+        <h1 class="jumbotron-heading">Our Bikes</h1>
+        <p style = "font-size: 120%;">We have the best selections of bikes around. Please see our selection below.</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Wheels</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Motorized</th>
+                    <th scope="col">Folding</th>
+                    <th scope="col">Available</th>
+                </tr>
+            </thead>
+
+            <!--Inserting json elements into table-->
+            {%for i in range(0, len)%}
+            <tr>   
+            <th scope="row">
+            <img id="bikeimg" class = "img" src="{{'/img/bikes/'+ data[i]['image']}}" >
+            </th>
+
+            <td>{{data[i]["name"]}} </td>
+            
+            <td>{{data[i]["wheels"]}}</td>
+
+            <td>{{data[i]["size"]}}</td>
+            
+            <td>{{data[i]["motor"]}}</td>
+            
+            <td>{{data[i]["folding"]}}</td>
+            
+            <td>{{data[i]["available"]}}</td>
+            
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</section>
+
+{% endblock %}

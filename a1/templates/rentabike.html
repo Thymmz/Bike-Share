@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% set active = "Bikes" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <div class="text-left">
+        <h1 class="jumbotron-heading">Rent a Bike</h1>
+        <p style = "font-size: 120%;">Please select a rental from our available bikes below!</p>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        </thead>
+        <script>
+        let Given =  [{
+          "id": "b1",
+          "name": "Sixthreezero Around The Block Women's Single Speed Cruiser Bicycle Coral w/ Black Seat/Grips", 
+          "image": "sixthreezero.jpg",
+          "available": 2
+      },
+      {
+          "id": "b2",
+          "name": "Roadmaster 26 Men's Granite Peak Men's Bike",
+          "image": "roadmaster.jpg",
+          "available": 0
+      },
+      {
+          "id": "b3",
+          "name": "Fun 20 Inch Wheel Unicycle with Alloy Rim",
+          "image": "unicycle.jpg",
+          "available": 7
+      },
+      {
+          "id": "b4",
+          "name": "Mongoose Dolomite Fat Tire Mountain Bike",
+          "image": "mongoose.jpg",
+          "available": 3
+      },
+      {
+          "id": "b5",
+          "name": "EuroMini ZiZZO Campo 28lb Lightweight Aluminum Frame Shimano 7 - Speed Folding Bike",
+          "image": "euromini.jpg",
+          "available": 1
+      },
+      {
+          "id": "b6",
+          "name": "Huffy Mountain Bike Summit Ridge w / Shimano & Trail Tires",
+          "image": "huffy.jpg",
+          "available": 0
+      },
+      {
+          "id": "b7",
+          "name": "Razor RSF350 Electric Street Bike",
+          "image": "razor.jpg",
+          "available": 8
+      },
+      {
+          "id": "b8",
+          "name": "Shaofu Folding Electric Bicycle – 350W 36V Waterproof E-Bike with 15 Mile Range Collapsible Frame and APP Speed Setting",
+          "image": "shaofu.jpg",
+          "available": 0
+      },
+      {
+          "id": "b9",
+          "name": "Goplus Adult Tricycle Trike Cruise Bike Three-Wheeled Bicycle w/Large Size Basket for Recreation Shopping Exercise",
+          "image": "tricycle.jpg",
+          "available": 2
+      },
+      {
+          "id": "b10",
+          "name": "Swagtron 200W SWAGCYCLE Envy Steel Frame Folding Electric Bicycle e Bike w / Automatic Headlight",
+          "image": "swagtron.jpg",
+          "available": 5
+      }];
+
+  function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+
+/*Attempted to add image*/
+
+/*
+function generateTable(table, data) {
+  for (let element of data) {
+    var a = element;
+    let row = table.insertRow();
+    for (key in element) {
+
+      if(a = image){
+        let cell = row.insertCell();
+        var img = document.createElement('img');
+        img.src = '/img/bikes/'+element[key];
+        cell.appendChild(img);
+      }
+
+      else{
+        let cell = row.insertCell();
+        let text = document.createTextNode(element[key]);
+        cell.appendChild(text);}
+    }
+  }
+}*/
+
+
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+
+
+let table = document.querySelector("table");
+let data = Object.keys(Given[0]);
+generateTableHead(table, data);
+generateTable(table, Given);
+
+      </script>
+
+      </table>
+</section>
+
+{% endblock %}

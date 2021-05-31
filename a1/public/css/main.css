@@ -1,0 +1,59 @@
+/*Atharva Deshpande, ad3756@drexel.edu*/
+/*CS530: DUI, Assignment 1*/
+
+.body {
+    font-family: "Avenir";
+    font-size: 1rem;
+    background: #fff;
+}
+
+/*Adding colour to the edges of the navbar*/
+header {
+    background: #006298;
+}
+
+/*Adding colour to the edges of the navbar*/
+.btn {
+    background: #006298;
+    border-color: #006298;
+    color: #fff;
+}
+
+a.btn:hover {
+    background: rgb(89, 115, 140);
+    border-color: rgb(57, 75, 108);
+    color: #fff;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #006298;
+}
+
+/*Adding colour to the navbar*/
+.navbar{
+    background: #006298;
+}
+
+.nav-item{
+    color: #00ff00;
+} 
+
+/*Image of the bike should be capped to 100px*/
+#bikeimg{
+    max-height: 100px;
+}
+
+.content {
+    padding: 2rem 1.5rem;
+}
+
+.jumbotron {
+    padding: 1.5rem;
+    background: 0;
+}
+
+.jumbotron img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
